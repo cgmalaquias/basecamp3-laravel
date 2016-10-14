@@ -69,7 +69,7 @@ class Generate_Docs {
 	 */
 	protected $examples = array(
 		// Parameter names
-		'since'       => "'2012-03-24T11:00:00-06:00'",
+		'since'       => "'2016-10-14T11:00:00-11:00'",
 		'description' => "'Example description'",
 		'content'     => "'Example content'",
 		'name'        => "'Example name'",

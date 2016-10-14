@@ -1,10 +1,12 @@
 {
-    "name": "netvlies/basecamp-php",
-    "description": "The Basecamp API makes it easy for developers to communicate with the 37signals Basecamp platform",
+    "name": "cgmalaquias/basecamp3-laravel",
+    "description": "Integração da API do Basecamp 3 com o Laravel 5",
     "type": "library",
-    "keywords": ["basecamp", "37signals", "api"],
+    "keywords": ["basecamp", "37signals", "api", "laravel"],
     "license": "MIT",
     "require": {
+        "php": ">=5.*",
+        "laravel/framework": "5.*",
         "guzzle/guzzle": "~3.3"
     },
     "require-dev": {
@@ -12,8 +14,8 @@
     },
     "authors": [
         {
-            "name": "Richard van den Brand",
-            "email": "richard@netvlies.nl"
+            "name": "Claudio Gonçalves Malaquias",
+            "email": "consultoriamalaquias@gmail.com"
         }
     ],
     "autoload": {

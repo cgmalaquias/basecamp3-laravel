@@ -1,18 +1,16 @@
-# Integra��o da API do Basecamp 3 com o Laravel 5
+# Integração da API do Basecamp 3 com o Laravel 5
 
-Esta **Integra��o da API do Basecamp 3 com o Laravel 5** proporcionar� a integra��o da [nova API do Basecamp 3, atraves da 37 Signals][basecamp] com a [aplica��o em Laravel 5][laravel].
+Esta **Integração da API do Basecamp 3 com o Laravel 5** proporcionará a integração da [nova API do Basecamp 3, atraves da 37 Signals][basecamp] com a [aplicação em Laravel 5][laravel].
 
-**NOTE**: This library is under heavy development and a lot of calls haven't been implemented yet. We're looking forward to any of your PR's.
+## Instalação
+Nós recomendamos utilizar o composer: (após a instalação do Laravel 5):
 
-## Installation
-We recommend Composer for managing dependencies. Installing is as easy as:
+    $ php composer.phar require cgmalaquias/basecamp3-laravel
 
-    $ php composer.phar require netvlies/basecamp-php
+## Utilização
 
-## Usage
-
-To use the library the only requirement is you have a account.
-Upon creating the client you have to pass your credentials or an OAuth token. Furthermore you need your userId to construct the URI's.
+Para utilizar a biblioteca, será necessário ter uma conta criada no [https://integrate.37signals.com/][37signals]
+Utilize a biblioteca do [Laravel Socialite][socialite]
 
 ### Authorization with username and password
 
@@ -45,11 +43,23 @@ $client = \Basecamp\BasecampClient::factory(array(
 ));
 
 ```
+The following service operations are not (yet) covered by unit tests:
+
+* updateTodo 
+* grantAccess 
+* updateCalendar 
+* deleteCalendar 
+* updateCalendarEvent 
+* deleteCalendarEvent 
+* updateProjectCalendarEvent 
+* deleteProjectCalendarEvent 
 
 <!--- END API -->
 
 [basecamp]: https://github.com/basecamp/bc3-api
 [laravel]: https://laravel.com/docs/5.3
+[37signals]: https://integrate.37signals.com/
+[socialite]: https://github.com/laravel/socialite
 [guzzle]: http://guzzlephp.org/
 [caching]: http://guzzlephp.org/plugins/cache-plugin.html
 [service.php]: https://github.com/cgmalaquias/basecamp3-laravel/blob/master/src/Basecamp/Resources/service.php
