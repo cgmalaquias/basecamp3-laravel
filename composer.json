@@ -5,8 +5,8 @@
     "keywords": ["basecamp", "37signals", "api", "laravel"],
     "license": "MIT",
     "require": {
-        "php": "5.*",
-        "laravel/framework": "5.*",
+        "php": ">=5.2",
+        "laravel/framework": ">=5.2",
         "guzzle/guzzle": "~3.3"
     },
     "require-dev": {
