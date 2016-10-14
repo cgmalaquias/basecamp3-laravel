@@ -1,6 +1,6 @@
 # Integração da API do Basecamp 3 com o Laravel 5
 
-The **Basecamp SDK for PHP** enables PHP developers to easily integrate [37signals Basecamp all new API][basecamp] into their applications.
+Esta **Integração da API do Basecamp 3 com o Laravel 5** proporcionará a integração da [nova API do Basecamp 3, atraves da 37 Signals][basecamp] com a [aplicação em Laravel 5][laravel].
 
 **NOTE**: This library is under heavy development and a lot of calls haven't been implemented yet. We're looking forward to any of your PR's.
 
@@ -49,6 +49,7 @@ $client = \Basecamp\BasecampClient::factory(array(
 <!--- END API -->
 
 [basecamp]: https://github.com/basecamp/bc3-api
+[laravel]: https://laravel.com/docs/5.3
 [guzzle]: http://guzzlephp.org/
 [caching]: http://guzzlephp.org/plugins/cache-plugin.html
 [service.php]: https://github.com/cgmalaquias/basecamp3-laravel/blob/master/src/Basecamp/Resources/service.php
