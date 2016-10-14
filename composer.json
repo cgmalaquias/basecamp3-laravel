@@ -18,8 +18,8 @@
         "guzzle/guzzle": "~3.3"
     },
     "autoload": {
-        "psr-0": {
-            "psr-0": { "Basecamp": "src/" }
+        "psr-4": {
+            "Carbon\\": "src/Basecamp/"
         }
     }
 }
