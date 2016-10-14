@@ -1,6 +1,6 @@
 {
     "name": "cgmalaquias/basecamp3-laravel",
-    "description": "Integração da API do Basecamp 3 com o Laravel 5",
+    "description": "Integracao da API do Basecamp 3 com o Laravel 5",
     "type": "library",
     "keywords": ["basecamp", "37signals", "api", "laravel"],
     "license": "MIT",
@@ -14,7 +14,7 @@
     },
     "authors": [
         {
-            "name": "Claudio Gonçalves Malaquias",
+            "name": "Claudio Goncalves Malaquias",
             "email": "consultoriamalaquias@gmail.com"
         }
     ],

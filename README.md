@@ -12,38 +12,49 @@ Nós recomendamos utilizar o composer: (após a instalação do Laravel 5):
 Para utilizar a biblioteca, será necessário ter uma conta criada no [https://integrate.37signals.com/][37signals]
 Utilize a biblioteca do [Laravel Socialite][socialite]
 
-### Authorization with username and password
+Após a autenticação pelo Socialite, utilize a configuação abaixo em um controller chamado BasecampController.php, com 
+### Utiize a autenticação via OAuth token
+
+Abaixo um exemplo de como ficará seu controller com o handle e o callback:
 
 ```php
 <?php
 
-$client = \Basecamp\BasecampClient::factory(array(
-    'auth' => 'http',
-    'username' => 'you@email.com',
-    'password' => 'secret',
-    'user_id' => 99999999,
-    'app_name' => 'My Wicked Application',
-    'app_contact' => 'http://mywickedapplication.com'
-));
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Socialite;
+use Basecamp;
+
+class BasecampController extends Controller {
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function handle(Request $request) {
+        return Socialite::driver('Thitysevensignals')->redirect();
+    }
+
+    public function callback(Request $request) {
+        $user = Socialite::driver('Thitysevensignals')->stateless()->user();
+        $client = Basecamp\BasecampClient::factory(array(
+                    'base_url' => $user->user['accounts'][1]['href'],
+                    'auth' => 'oauth',
+                    'username' => $user->user['identity']['email_address'],
+                    'user_id' => $user->user['identity']['id'], //$user->user['accounts'][1]['id'],
+                    'app_name' => $user->user['accounts'][1]['name'],
+                    'app_contact' => $user->user['identity']['email_address'],
+                    'token' => $user->token
+        ));
+        //dd($user);
+        dd($client);
+    }
+
 ```
-
-### Authorization with OAuth token
-
-This library doesn't handle the OAuth authorization process for you. There are already a lot of libraries out there which handle this process perfectly for you. When you recieved your token you'll have to pass it on to the client:
-
-```php
-<?php
-
-$client = \Basecamp\BasecampClient::factory(array(
-    'auth'     => 'oauth',
-    'token'    => 'Wtj4htewhtuewhuoitewh',
-    'user_id'   => 99999999,
-    'app_name' => 'My Wicked Application',
-    'app_contact' => 'http://mywickedapplication.com'
-));
-
-```
-The following service operations are not (yet) covered by unit tests:
+ No controller, você pdoerá criar os métodos, para aceitar todas as reuisições compostas nesta biblioteca, podendo fazer seus testes utitários:
 
 * updateTodo 
 * grantAccess 

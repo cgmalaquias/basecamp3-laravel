@@ -4,11 +4,6 @@ return array(
     'serviceFullName'       => '37signals Basecamp API',
     'serviceAbbreviation'   => 'Basecamp API',
     'operations'            => array(
-        'getArchivedProjects' => array(
-            'httpMethod' => 'GET',
-            'uri'       => 'projects/archived.json',
-            'summary'   => 'Get archived Projects' . PHP_EOL . '[Basecamp API: Projects](https://github.com/basecamp/bcx-api/blob/master/sections/projects.md)',
-        ),
         'getProjects' => array(
             'httpMethod' => 'GET',
             'uri'       => 'projects.json',
