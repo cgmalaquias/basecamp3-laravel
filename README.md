@@ -1,6 +1,4 @@
-# Basecamp SDK for PHP
-
-[![Build Status](https://secure.travis-ci.org/netvlies/basecamp-php.png)](https://secure.travis-ci.org/netvlies/basecamp-php)
+# Integração da API do Basecamp 3 com o Laravel 5
 
 The **Basecamp SDK for PHP** enables PHP developers to easily integrate [37signals Basecamp all new API][basecamp] into their applications.
 
